@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TUBD Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>TUBD Admin Panel</h1>
+  <button id="logoutBtn">লগআউট</button>
+</header>
+
+<div class="container">
+
+  <aside class="sidebar">
+    <ul>
+      <li onclick="showSection('dashboard')">ড্যাশবোর্ড</li>
+      <li onclick="showSection('members')">সদস্য</li>
+      <li onclick="showSection('payments')">পেমেন্ট</li>
+      <li onclick="showSection('loans')">লোন</li>
+      <li onclick="showSection('complaints')">অভিযোগ</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+
+    <section id="dashboard" class="section active">
+      <h2>ড্যাশবোর্ড</h2>
+      <div class="cards">
+        <div class="card">মোট সদস্য: 0</div>
+        <div class="card">পেমেন্ট: 0</div>
+        <div class="card">অভিযোগ: 0</div>
+      </div>
+    </section>
+
+    <section id="members" class="section">
+      <h2>সদস্য নিবন্ধন</h2>
+
+      <form id="memberForm">
+        <input type="text" id="name" placeholder="পূর্ণ নাম" required>
+        <input type="text" id="mobile" placeholder="মোবাইল" required>
+        <input type="text" id="district" placeholder="জেলা" required>
+        <input type="number" id="deposit" placeholder="মাসিক সঞ্চয়" required>
+
+        <button type="submit">সংরক্ষণ</button>
+      </form>
+
+      <h3>সদস্য তালিকা</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>নাম</th>
+            <th>মোবাইল</th>
+            <th>জেলা</th>
+          </tr>
+        </thead>
+        <tbody id="memberTable"></tbody>
+      </table>
+    </section>
+
+    <section id="payments" class="section">
+      <h2>পেমেন্ট</h2>
+      <p>পরে যোগ হবে</p>
+    </section>
+
+    <section id="loans" class="section">
+      <h2>লোন</h2>
+      <p>পরে যোগ হবে</p>
+    </section>
+
+    <section id="complaints" class="section">
+      <h2>অভিযোগ</h2>
+      <p>পরে যোগ হবে</p>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
