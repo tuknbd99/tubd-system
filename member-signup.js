@@ -58,7 +58,14 @@ document.getElementById("signupForm").addEventListener("submit", async function 
       .insert([data])
       .select()
       .single();
-
+await supabase.from("member_accounts").insert(
+  {
+    member_id: inserted.id,
+    member_code: inserted.member_code,
+    login_mobile: inserted.mobile,
+    password_hash: inserted.mobile, // প্রথমে মোবাইলকেই ডিফল্ট পাসওয়ার্ড
+    role: "member"
+  };
     if (error) throw error;
 
     await createReferral(inserted.id, data.refer_code);
